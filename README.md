@@ -1,2 +1,2 @@
 # canban
-test canban application  for organization
+client application
