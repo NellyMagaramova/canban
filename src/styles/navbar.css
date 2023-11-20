@@ -1,0 +1,46 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+.nav{
+    background-color: #333;
+    color: white;
+    width: 100%;
+    display: inline-block;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.nav ul{
+    padding: 1;
+    margin: 0;
+    list-style: none;
+    display: inline-block;
+    gap: 1rem;
+    margin: 1;
+}
+
+.nav li{
+    float: left;
+}
+
+.nav a{
+    color: white;
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    align-items: center;
+    padding: .5rem;
+    margin: 1;
+
+}
+
+.nav li:hover{
+    background-color: #111;
+}
