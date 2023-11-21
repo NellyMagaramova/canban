@@ -6,6 +6,11 @@ body{
     margin: 0;
 }
 
+.container{
+    margin: 1rem;
+    text-align: center;
+}
+
 .nav{
     background-color: #333;
     color: white;
@@ -18,12 +23,11 @@ body{
 }
 
 .nav ul{
-    padding: 1;
-    margin: 0;
+    padding: .5rem;
     list-style: none;
     display: inline-block;
     gap: 1rem;
-    margin: 1;
+    margin: .5rem;
 }
 
 .nav li{
@@ -35,10 +39,10 @@ body{
     height: 100%;
     width: 100%;
     display: inline-block;
+    text-decoration: none;
     align-items: center;
     padding: .5rem;
-    margin: 1;
-
+    margin: .5rem;
 }
 
 .nav li:hover{
