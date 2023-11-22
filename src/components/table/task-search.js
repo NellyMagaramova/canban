@@ -12,10 +12,8 @@ function SearchBar({
 
     return (
         <>
-
             <div className="container">
                 <form role="search" id="form">
-
 
                     <input
                         type="search"

@@ -75,6 +75,7 @@ function TaskTable({tasks}) {
             <table>
                 <thead>
                 <tr>
+                    <th>Категория</th>
                     <th>Название</th>
                     <th>Номер</th>
                 </tr>
