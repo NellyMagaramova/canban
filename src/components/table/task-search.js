@@ -7,7 +7,7 @@
 function SearchBar({
                        searchValues, // все значения для поиска
                        onFilterTextChange, // callback метод для обработки в родительском компоненте
-                       onInStockOnlyChange // callback метод для обработки в родительском компоненте
+                       onInUnCompletedOnlyChange // callback метод для обработки в родительском компоненте
                    }) {
 
     return (
@@ -43,12 +43,12 @@ function SearchBar({
             </div>
 
             <div className="container">
-                Показать только в наличии
+                Показать только задачи в процессе
                 <input type="checkbox"
                        className="checkbox"
                        id="box"
-                       checked={searchValues.inStockOnly}
-                       onChange={(e) => onInStockOnlyChange('inStockOnly', e.target.checked)}
+                       checked={searchValues.inCompletedOnly}
+                       onChange={(e) => onInUnCompletedOnlyChange('inCompletedOnly', e.target.checked)}
                 />
 
                 <label htmlFor="box"></label>
@@ -56,8 +56,5 @@ function SearchBar({
             </div>
         </>
     );
-
 }
-
-
 export {SearchBar}
