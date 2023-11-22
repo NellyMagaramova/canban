@@ -1,3 +1,7 @@
-export default function Taskslist(){
-    return <h1>Task List</h1>
+import {FilterableTaskTable} from "./table/task-table"
+
+function Taskslist(){
+    return   < FilterableTaskTable/>
 }
+
+export {Taskslist}
