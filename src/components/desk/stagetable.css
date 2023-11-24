@@ -1,0 +1,42 @@
+.sTable {
+    width: 100%;
+    color: white;
+    margin-top: 10px;
+    margin-left: 2px;
+}
+
+
+.sTable table {
+    min-width: 20%;
+    margin-left: 20px;
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    align-items: center;
+}
+
+.sTable tr{ width: 100%; }
+
+.sTable th{
+    width: 40%;
+    text-align: left;
+}
+.sTable td {
+    padding: 2px;
+    background-color: #6a5acd;
+    color: #fff;
+    text-align: left;
+}
+
+.sTable th {
+    text-align: left;
+    background-color: transparent;
+}
+
+
+
+
+
+
