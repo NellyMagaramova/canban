@@ -15,6 +15,7 @@ function FilterableTaskTable({tasks}) {
     // код инициализации состояния выполняется только 1 раз при первой отрисовке компонента
     // затем при повторной отрисовке - просто будет браться оттуда значение searchValues
 
+
     const [searchValues, setSearchValues] = useState({filterText: '', inCompletedOnly: false});
 
     // при каждой отрисовке компонента - будут считывать переменные из состояния и фильтровать данные
@@ -59,10 +60,10 @@ function TaskTable({tasks}) {
     const rows = [];
     let lastCategory = null;
 
-    // проходим по всем продуктам и формируем из них React компонент ProductRow
+    // проходим по всем задачам
     tasks.forEach((task) => {
         // отображение категории
-        if (task.category !== lastCategory) { // если категория товаров изменилась - тогда отображаем ее
+        if (task.category !== lastCategory) { // если категория задач изменилась - тогда отображаем ее
             rows.push( <TaskCategoryRow  category={task.category}  key={task.category}/> );
         }
         // отображение задачи в виде строки

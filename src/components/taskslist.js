@@ -5,5 +5,4 @@ import {TASKS} from "./table/test-data";
 function Taskslist(){
     return   < FilterableTaskTable  tasks={TASKS}/>
 }
-
 export {Taskslist}

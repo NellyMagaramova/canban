@@ -1,8 +1,6 @@
 html,
 
-body {
-    height: 100%;
-}
+body { height: 100%; }
 
 body {
     background: linear-gradient(45deg, #49a09d, #5f2c82);
@@ -12,21 +10,22 @@ body {
 }
 
 .container {
-    margin: 0 auto;
-    max-width: 800px;
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-right: 20px;
+    max-width: 95%;
     width: 100%;
     color: white;
-    margin-top: 20px;
 }
 
-
 table {
+    margin-left: 10px;
     width: 100%;
+    min-width: 20%;
     border-collapse: collapse;
     overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    margin: 0 auto;
 }
 
 th,
