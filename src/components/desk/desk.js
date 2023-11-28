@@ -1,12 +1,18 @@
-
+/*
 import {SearchCategoryBar} from "./SearchBar";
 import {useState} from "react";
-import {TaskCategoryRow, TaskRow} from "../table/task-row";
 
+import { DataView, DataViewLayoutOptions } from 'primereact/dataview';
+*
+ */
 
+/*
 function TaskDesk({tasks}) {
+    return <h1>Create Task</h1>
+}
+*/
 
-
+    /*
     function searchValueChanged(propName, value) {
         setSearchValues({
             ...searchValues,
@@ -86,4 +92,4 @@ function StageTable({tasks}) {
 
 
 
-export {TaskDesk}
+export {TaskDesk}*/
