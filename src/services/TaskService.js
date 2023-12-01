@@ -1,10 +1,8 @@
 import http from "../http-common";
 
 
-import http from "../http-common";
-
 const getAll = () => {
-    return http.get("/task");
+    return http.get("/task/search");
 };
 
 const get = id => {
@@ -16,19 +14,16 @@ const create = data => {
 };
 
 const update = (id, data) => {
-    return http.put(`/task/${id}`, data);
+    return http.put('/task/update', data);
 };
 
 const remove = id => {
     return http.delete(`/task/${id}`);
 };
 
-const removeAll = () => {
-    return http.delete(`/task`);
-};
 
 const findByTitle = title => {
-    return http.get(`/tutorials?title=${title}`);
+    return http.get(`/task?title=${title}`);
 };
 
 const TaskService =
@@ -38,7 +33,6 @@ const TaskService =
         create,
         update,
         remove,
-        removeAll,
         findByTitle
     };
 
