@@ -22,8 +22,18 @@ const remove = id => {
 };
 
 
-const findByTitle = title => {
-    return http.get(`/task?title=${title}`);
+const findByEmail = email => {
+    return http.get(`/task/all`);
+};
+
+const findByCategory = category => {
+    return http.post('/task/all',
+        {
+            title: "",
+            category : {category},
+            "sortColumn": "title",
+            "sortDirection": "desc"
+         })
 };
 
 const TaskService =
@@ -33,7 +43,8 @@ const TaskService =
         create,
         update,
         remove,
-        findByTitle
+        findByEmail,
+        findByCategory
     };
 
 export default TaskService;
