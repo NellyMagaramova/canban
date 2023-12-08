@@ -15,10 +15,7 @@ function SearchBar({
             <div className="container">
                 <form role="search" id="form">
 
-                    <input
-                        type="search"
-                        value={searchValues.filterText}
-                        placeholder="Поиск..."
+                    <input  type="search"  value={searchValues.filterText}  placeholder="Поиск..."
                         onChange={(e) => {
                             onFilterTextChange('filterText', e.target.value)
                         }}
@@ -42,10 +39,7 @@ function SearchBar({
 
             <div className="container">
                 Показать только задачи в процессе
-                <input type="checkbox"
-                       className="checkbox"
-                       id="box"
-                       checked={searchValues.inCompletedOnly}
+                <input type="checkbox"  className="checkbox"  id="box"  checked={searchValues.inCompletedOnly}
                        onChange={(e) => onInUnCompletedOnlyChange('inCompletedOnly', e.target.checked)}
                 />
 

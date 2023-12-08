@@ -1,6 +1,7 @@
 import  {useState, useEffect} from "react";
 import TaskDataService from "../../services/TaskService";
 import { Link } from "react-router-dom";
+import "./style.css";
 
 const TaskList = () => {
     const [tasks, setTasks] = useState([]);
@@ -56,31 +57,19 @@ const TaskList = () => {
                 setTasks(response.data);
                 console.log(response.data);
             })
-            .catch(e => {
-                console.log(e);
-            }); 
+            .catch(e => { console.log(e); } );
     };
 
     return (
-        <div className="list row">
+        <div className="container">
             <div className="col-md-8">
                 <div className="input-group mb-3">
-                    <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Search by title"
-                        value={searchTitle}
+                    <input  type="search"  placeholder="Search by title"  value={searchTitle}
                         onChange={onChangeSearchTitle}
                     />
-                    <div className="input-group-append">
-                        <button
-                            className="btn btn-outline-secondary"
-                            type="button"
-                            onClick={findByTitle}
-                        >
-                            Search
-                        </button>
-                    </div>
+
+                    <button   type="button"  onClick={findByTitle} > Ok </button>
+
                 </div>
             </div>
             <div className="col-md-6">
@@ -108,35 +97,27 @@ const TaskList = () => {
                     Delete Task
                 </button>
             </div>
+
             <div className="col-md-6">
                 {currentTask ? (
                     <div>
                         <h4>Task 2</h4>
                         <div>
-                            <label>
-                                <strong>Title:</strong>
-                            </label>{" "}
+                            <label> <strong>Title:</strong>  </label>{" "}
                             {currentTask.title}
                         </div>
+
                         <div>
-                            <label>
-                                <strong>Task Date:</strong>
-                            </label>{" "}
+                            <label>  <strong>Task Date:</strong>  </label>{" "}
                             {currentTask.taskDate}
                         </div>
+
                         <div>
-                            <label>
-                                <strong>Status:</strong>
-                            </label>{" "}
+                            <label>  <strong>Status:</strong>  </label>{" "}
                             {currentTask.published ? "Published" : "Pending"}
                         </div>
 
-                        <Link
-                            to={"/task/" + currentTask.id}
-                            className="badge badge-warning"
-                        >
-                            Edit
-                        </Link>
+                        <Link to={"/task/" + currentTask.id}  className="linktotask" > Edit  </Link>
                     </div>
                 ) : (
                     <div>
