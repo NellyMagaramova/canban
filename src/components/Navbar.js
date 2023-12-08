@@ -10,6 +10,7 @@ export default  function Navbar(){
             <CustomLink  to ="/create_task"> Создать задачу </CustomLink>
             <CustomLink  to ="/show_desk"> Доска задач </CustomLink>
             <CustomLink  to ="/show_all_tasks"> Список задач </CustomLink>
+            <CustomLink  to ="/show_task"> Список задач </CustomLink>
         </ul>
     </nav>
 }

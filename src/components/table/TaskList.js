@@ -39,8 +39,8 @@ const TaskList = () => {
         setCurrentIndex(index);
     };
 
-    const removeAllTasks = () => {
-        TaskDataService.removeAll()
+    const removeTask = () => {
+        TaskDataService.remove()
             .then(response => {
                 console.log(response.data);
                 refreshList();
@@ -58,7 +58,7 @@ const TaskList = () => {
             })
             .catch(e => {
                 console.log(e);
-            });
+            }); 
     };
 
     return (
@@ -103,9 +103,9 @@ const TaskList = () => {
 
                 <button
                     className="m-3 btn btn-sm btn-danger"
-                    onClick={removeAllTasks}
+                    onClick={removeTask}
                 >
-                    Remove All
+                    Delete Task
                 </button>
             </div>
             <div className="col-md-6">
