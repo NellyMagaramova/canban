@@ -2,7 +2,18 @@ import http from "../http-common";
 
 
 const getAll = () => {
-    return http.get("/task/search");
+    console.log(" getAll = ()");
+    return http.post("/task/search", "test@email.ru");
+};
+
+const findByCategory = category => {
+    return http.post('/task/search',
+        {
+            title: "",
+            category : {category},
+            "sortColumn": "title",
+            "sortDirection": "desc"
+        })
 };
 
 const get = id => {
@@ -26,15 +37,9 @@ const findByEmail = email => {
     return http.get('/task/all');
 };
 
-const findByCategory = category => {
-    return http.post('/task/all',
-        {
-            title: "",
-            category : {category},
-            "sortColumn": "title",
-            "sortDirection": "desc"
-         })
-};
+
+
+
 
 
 

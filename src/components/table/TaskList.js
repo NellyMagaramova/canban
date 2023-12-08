@@ -10,15 +10,18 @@ const TaskList = () => {
     const [searchTitle, setSearchTitle] = useState("");
 
     useEffect(() => {
+        console.log("useEffect");
         retrieveTasks();
     }, []);
 
     const onChangeSearchTitle = e => {
+        console.log("onChangeSearchTitle");
         const searchTitle = e.target.value;
         setSearchTitle(searchTitle);
     };
 
     const retrieveTasks = () => {
+        console.log("retrieveTasks");
         TaskDataService.getAll()
             .then(response => {
                 setTasks(response.data);
@@ -52,7 +55,7 @@ const TaskList = () => {
     };
 
     const findByTitle = () => {
-        TaskDataService.findByTitle(searchTitle)
+        TaskDataService.findByCategory(searchTitle)
             .then(response => {
                 setTasks(response.data);
                 console.log(response.data);
@@ -61,70 +64,62 @@ const TaskList = () => {
     };
 
     return (
+
         <div className="container">
-            <div className="col-md-8">
-                <div className="input-group mb-3">
-                    <input  type="search"  placeholder="Search by title"  value={searchTitle}
-                        onChange={onChangeSearchTitle}
-                    />
+            <form role="search" id="form">
+                <input  type="search"  placeholder="Искать по названию"  value={searchTitle}
+                    onChange={onChangeSearchTitle} />
+                <button   type="button"  onClick={findByTitle} > Ok </button>
+            </form>
 
-                    <button   type="button"  onClick={findByTitle} > Ok </button>
+            <h4> Список задач </h4>
 
-                </div>
-            </div>
-            <div className="col-md-6">
-                <h4>Task List</h4>
-
-                <ul className="list-group">
+            <ul className="taskstr">
                     {tasks &&
                         tasks.map((task, index) => (
                             <li
-                                className={
-                                    "list-group-item " + (index === currentIndex ? "active" : "")
-                                }
+                                className={ "active" + (index === currentIndex ? "active" : "") }
                                 onClick={() => setActiveTask(task, index)}
                                 key={index}
                             >
                                 {task.title}
                             </li>
                         ))}
-                </ul>
+            </ul>
 
-                <button
-                    className="m-3 btn btn-sm btn-danger"
-                    onClick={removeTask}
-                >
-                    Delete Task
-                </button>
-            </div>
+                <button  type="button" className="button"  onClick={removeTask} > Delete Task </button>
 
-            <div className="col-md-6">
-                {currentTask ? (
-                    <div>
-                        <h4>Task 2</h4>
+
+                <div className="container">
+                    {currentTask ?
+                    (
                         <div>
-                            <label> <strong>Title:</strong>  </label>{" "}
-                            {currentTask.title}
-                        </div>
+                            <h4>Task 2</h4>
+                            <div>
+                                <label> <strong> Title: </strong>  </label>{" "}
+                                {currentTask.title}
+                            </div>
 
+                            <div>
+                                <label>  <strong>Task Date:</strong>  </label>{" "}
+                                {currentTask.taskDate}
+                            </div>
+
+                            <div>
+                                 <label>  <strong> Status: </strong>  </label>{" "}
+                                 {currentTask.published ? "Published" : "Pending"}
+                            </div>
+
+                           <Link to={"/task/" + currentTask.id}  className="linktotask" > Edit  </Link>
+                        </div>
+                    ) :
+                    (
                         <div>
-                            <label>  <strong>Task Date:</strong>  </label>{" "}
-                            {currentTask.taskDate}
+                            <br />
+                            <p>Please click on a Task...</p>
                         </div>
-
-                        <div>
-                            <label>  <strong>Status:</strong>  </label>{" "}
-                            {currentTask.published ? "Published" : "Pending"}
-                        </div>
-
-                        <Link to={"/task/" + currentTask.id}  className="linktotask" > Edit  </Link>
-                    </div>
-                ) : (
-                    <div>
-                        <br />
-                        <p>Please click on a Task...</p>
-                    </div>
-                )}
+                   )
+                }
             </div>
         </div>
     );
