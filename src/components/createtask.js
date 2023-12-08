@@ -1,3 +1,5 @@
+import AddTask from "./newtask/AddTask";
+
 export default function Createtask(){
-    return <h1>Create Task</h1>
+    return <AddTask/>
 }
