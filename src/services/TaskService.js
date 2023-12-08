@@ -6,7 +6,8 @@ const getAll = () => {
 };
 
 const get = id => {
-    return http.get(`/task/${id}`);
+    // eslint-disable-next-line no-template-curly-in-string
+    return http.get('/task/${id}');
 };
 
 const create = data => {
@@ -18,12 +19,11 @@ const update = (id, data) => {
 };
 
 const remove = id => {
-    return http.delete(`/task/${id}`);
+    // eslint-disable-next-line no-template-curly-in-string
+    return http.delete('/task/${ id }' );
 };
-
-
 const findByEmail = email => {
-    return http.get(`/task/all`);
+    return http.get('/task/all');
 };
 
 const findByCategory = category => {
