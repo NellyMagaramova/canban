@@ -38,11 +38,6 @@ const findByEmail = email => {
 };
 
 
-
-
-
-
-
 const TaskService =
     {
         getAll,
