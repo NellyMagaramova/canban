@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import TaskDataService from "../../services/TaskService";
+import TaskDataService from "../services/TaskService";
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+/* import { Link } from "react-router-dom"; */
 
 const Task = props => {
     const { id }= useParams();
@@ -17,7 +17,7 @@ const Task = props => {
     const [message, setMessage] = useState("");
 
     const getTask = id => {
-        TaskDataService.get(id)
+        TaskDataService.getById(id)
             .then(response => {
                 setCurrentTask(response.data);
                 console.log(response.data);
@@ -59,14 +59,14 @@ const Task = props => {
         TaskDataService.update(currentTask.id, currentTask)
             .then(response => {
                 console.log(response.data);
-                setMessage("The tutorial was updated successfully!");
+                setMessage("The task was updated successfully!");
             })
             .catch(e => {
                 console.log(e);
             });
     };
 
-    const deleteTutorial = () => {
+    const deleteTask = () => {
         TaskDataService.remove(currentTask.id)
             .then(response => {
                 console.log(response.data);
@@ -130,7 +130,7 @@ const Task = props => {
                         </button>
                     )}
 
-                    <button className="badge badge-danger mr-2" onClick={deleteTutorial}>
+                    <button className="badge badge-danger mr-2" onClick={deleteTask}>
                         Delete
                     </button>
 
