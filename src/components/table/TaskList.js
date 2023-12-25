@@ -55,7 +55,7 @@ const TaskList = () => {
     };
 
     const findByTitle = () => {
-        TaskDataService.findByCategory(searchTitle)
+        TaskDataService.findByTitle(searchTitle)
             .then(response => {
                 setTasks(response.data);
                 console.log(response.data);
@@ -68,30 +68,30 @@ const TaskList = () => {
         <div className="container">
             <form role="search" id="form">
                 <input  type="search"  placeholder="Искать по названию"  value={searchTitle}
-                    onChange={onChangeSearchTitle} />
+                        onChange={onChangeSearchTitle} />
                 <button   type="button"  onClick={findByTitle} > Ok </button>
             </form>
 
             <h4> Список задач </h4>
 
             <ul className="taskstr">
-                    {tasks &&
-                        tasks.map((task, index) => (
-                            <li
-                                className={ "active" + (index === currentIndex ? "active" : "") }
-                                onClick={() => setActiveTask(task, index)}
-                                key={index}
-                            >
-                                {task.title}
-                            </li>
-                        ))}
+                {tasks &&
+                    tasks.map((task, index) => (
+                        <li
+                            className={ "active" + (index === currentIndex ? "active" : "") }
+                            onClick={() => setActiveTask(task, index)}
+                            key={index}
+                        >
+                            {task.title}
+                        </li>
+                    ))}
             </ul>
 
-                <button  type="button" className="button"  onClick={removeTask} > Delete Task </button>
+            <button  type="button" className="button"  onClick={removeTask} > Delete Task </button>
 
 
-                <div className="container">
-                    {currentTask ?
+            <div className="container">
+                {currentTask ?
                     (
                         <div>
                             <h4>Task 2</h4>
@@ -106,11 +106,11 @@ const TaskList = () => {
                             </div>
 
                             <div>
-                                 <label>  <strong> Status: </strong>  </label>{" "}
-                                 {currentTask.published ? "Published" : "Pending"}
+                                <label>  <strong> Status: </strong>  </label>{" "}
+                                {currentTask.published ? "Published" : "Pending"}
                             </div>
 
-                           <Link to={"/task/" + currentTask.id}  className="linktotask" > Edit  </Link>
+                            <Link to={"/task/" + currentTask.id}  className="linktotask" > Edit  </Link>
                         </div>
                     ) :
                     (
@@ -118,7 +118,7 @@ const TaskList = () => {
                             <br />
                             <p>Please click on a Task...</p>
                         </div>
-                   )
+                    )
                 }
             </div>
         </div>
