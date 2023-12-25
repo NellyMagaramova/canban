@@ -2,6 +2,7 @@ import  {useState, useEffect} from "react";
 import TaskDataService from "../../services/TaskService";
 import { Link } from "react-router-dom";
 import "./style.css";
+import {SearchBar} from "./task-search";
 
 const TaskList = () => {
     const [tasks, setTasks] = useState([]);
@@ -67,6 +68,7 @@ const TaskList = () => {
 
         <div className="container">
             <form role="search" id="form">
+
                 <input  type="search"  placeholder="Искать по названию"  value={searchTitle}
                         onChange={onChangeSearchTitle} />
                 <button   type="button"  onClick={findByTitle} > Ok </button>

@@ -5,7 +5,8 @@ import TaskList from "./table/TaskList";
 
 
 function Taskslist(){
-    //return   < FilterableTaskTable  tasks={TASKS}/>
-    return <TaskList/>
+   // return   < FilterableTaskTable  tasks={TASKS}/>
+   // return   < FilterableTaskTable/>
+   return <TaskList/>
 }
 export {Taskslist}

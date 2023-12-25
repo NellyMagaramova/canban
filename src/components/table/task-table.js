@@ -5,6 +5,7 @@ import "./style.css"
 
 function FilterableTaskTable({tasks}) {
 
+
     function searchValueChanged(propName, value) {
         setSearchValues({
             ...searchValues,
