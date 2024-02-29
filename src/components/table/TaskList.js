@@ -24,12 +24,13 @@ const TaskList = () => {
     const retrieveTasks = () => {
         console.log("retrieveTasks");
         TaskDataService.getAll()
-            .then(response => {
-                setTasks(response.data);
-                console.log(response.data);
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                setTasks(data);
             })
-            .catch(e => {
-                console.log(e);
+            .catch((err) => {
+                console.log(err.message);
             });
     };
 

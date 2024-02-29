@@ -2,7 +2,6 @@
   "name": "canban",
   "proxy": "https://localhost:8080",
   "ssl": true,
-  "sslKey": "src/assets/ssl/localhost.pkcs8",
   "sslCert": "src/assets/ssl/localhost.cer",
   "version": "0.1.0",
   "private": true,
