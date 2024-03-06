@@ -19,7 +19,7 @@ const getAll = () => {
 const findByCategory = category => {
     const data = {category: this.category};
     const body = JSON.stringify(data);
-    return http.post('/task/search',
+    return fetch('https://localhost:8080/task/search',
         body,
         {
             title: "",
@@ -33,7 +33,7 @@ const findByCategory = category => {
 
 const findByTitle = title => {
     console.log("find by title "+ title );
-    return http.post('/task/search',
+    return fetch('https://localhost:8080/task/search',
         {
             title: {title},
             "sortColumn": "title",
@@ -59,7 +59,7 @@ const create = data => {
 };
 
 const update = (id, data) => {
-    return http.put('/task/update', data);
+    return fetch('https://localhost:8080/task/update', data);
 };
 
 const remove = id => {
