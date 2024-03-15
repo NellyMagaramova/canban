@@ -1,20 +1,34 @@
 import http from "../http-common";
 
 
+/*
 const getAll = () => {
     console.log(" getAll = ()");
     return fetch('https://localhost:8080/task/all',
         {  // Enter your IP address here
-
             method: 'POST',
             mode: 'cors',
             body: "email1@gmail.ru"
         }
     )
-
-  /*  return http.post("/task/search", "email1@gmail.ru");*/
-
+   return http.post("/task/search", "email1@gmail.ru");
 };
+*/
+
+const getAll = async() => {
+    console.log(" getAll = ()");
+
+    return await fetch('https://localhost:8080/task/all',
+    {  // Enter your IP address here
+            method: 'POST',
+            mode: 'cors',
+            body: "email1@gmail.ru"
+        }
+    )
+}
+
+
+
 
 const findByCategory = category => {
     const data = {category: this.category};

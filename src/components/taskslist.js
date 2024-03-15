@@ -1,12 +1,11 @@
 /*import {FilterableTaskTable} from "./table/task-table"*/
 
 //import {TASKS} from "./table/test-data";
-import TaskList from "./table/TaskList";
+import TaskListOld from "./table/TaskListOld";
 
 
-function Taskslist(){
+export default function Tasklist(){
    // return   < FilterableTaskTable  tasks={TASKS}/>
    // return   < FilterableTaskTable/>
-   return <TaskList/>
+   return <TaskListOld/>
 }
-export {Taskslist}
