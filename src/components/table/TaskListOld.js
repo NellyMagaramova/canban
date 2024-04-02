@@ -19,17 +19,19 @@ const TaskListOld = () => {
     }
     */
 
+
     const retrieveTasks =  async () =>
     {
 
         console.log("1");
-        const Response =  TaskDataService.getAll()
+    /*    const Response =  TaskDataService.getAll()
             .then((response) => response.json());
         setTasks(Response);
 
 
         console.log("getdata");
-/*
+        */
+
         const Response = await  fetch('https://localhost:8080/task/all',
             {  // Enter your IP address here
                 method: 'POST',
@@ -39,7 +41,7 @@ const TaskListOld = () => {
         )
             .then((response) => response.json());
         setTasks(Response);
-        */
+
     }
     return (
         <div >
